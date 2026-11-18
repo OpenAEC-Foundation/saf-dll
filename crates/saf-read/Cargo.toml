@@ -1,0 +1,17 @@
+[package]
+name = "saf-read"
+description = "Reader of SAF, the Structural Analysis Format (.xlsx), into the analysis model of fem-model"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+# the neutral analysis model, shared with the readers of fem-dll
+fem-model = { git = "https://github.com/OpenAEC-Foundation/fem-dll", rev = "a511ec287e8f0005febdb9276ba9742ad7f58218" }
+# xlsx workbooks (MIT), pure Rust
+calamine = { version = "0.38", default-features = false }
+
+[dev-dependencies]
+# writes the hand-made test workbooks (MIT OR Apache-2.0)
+rust_xlsxwriter = { version = "0.102", default-features = false }
